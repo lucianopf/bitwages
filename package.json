@@ -1,0 +1,21 @@
+{
+  "name": "bitcoin-exchange-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/micro",
+    "deploy": "now --public && now alias"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "micro": "^9.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "now": {
+    "alias": "bitcoin-exchange-calculator"
+  }
+}
