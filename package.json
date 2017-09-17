@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/micro",
-    "manual-deploy": "./node_modules/.bin/now rm bitcoin-exchange-calculator -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
-    "automatic-deploy": "./node_modules/.bin/now rm bitcoin-exchange-calculator -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
+    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
+    "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
   "author": "",
   "license": "ISC",
