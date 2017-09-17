@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/micro",
-    "deploy": "./node_modules/.bin/now --public && ./node_modules/.bin/now alias"
+    "manual-deploy": "./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
+    "automatic-deploy": "./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
   "author": "",
   "license": "ISC",
