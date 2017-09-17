@@ -1,12 +1,12 @@
 {
-  "name": "bitcoin-exchange-calculator",
+  "name": "bitwages",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/micro",
-    "manual-deploy": "./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
-    "automatic-deploy": "./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
+    "manual-deploy": "./node_modules/.bin/now rm bitcoin-exchange-calculator -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
+    "automatic-deploy": "./node_modules/.bin/now rm bitcoin-exchange-calculator -s -y && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +17,7 @@
     "request-promise-cache": "^1.0.6"
   },
   "now": {
-    "alias": "bitcoin-exchange-calculator"
+    "alias": "bitwages"
   },
   "devDependencies": {
     "now": "^8.3.4"
