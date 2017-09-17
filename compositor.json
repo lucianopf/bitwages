@@ -1,0 +1,147 @@
+{
+  "name": "lucianopf/bitwages",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "Bitwages",
+  "branch": "master",
+  "style": {
+    "name": "Default",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/BannerHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "fontWeight": 400,
+    "bold": 600,
+    "lineHeight": 1.5,
+    "typeScale": [
+      72,
+      48,
+      24,
+      20,
+      16,
+      14,
+      12
+    ],
+    "monospace": "Menlo, monospace",
+    "heading": {
+      "fontFamily": null,
+      "fontStyle": null,
+      "fontWeight": 600,
+      "lineHeight": 1.25,
+      "textTransform": null,
+      "letterSpacing": null
+    },
+    "h0": {},
+    "h1": {},
+    "h2": {},
+    "h3": {},
+    "h4": {},
+    "h5": {},
+    "h6": {},
+    "alternativeText": {},
+    "space": [
+      0,
+      8,
+      16,
+      32,
+      48,
+      64,
+      96
+    ],
+    "layout": {
+      "maxWidth": 1024,
+      "centered": false
+    },
+    "colors": {
+      "text": "#111",
+      "background": "#fff",
+      "primary": "#08e",
+      "secondary": "#059",
+      "highlight": "#e08",
+      "border": "#ddd",
+      "muted": "#eee"
+    },
+    "border": {
+      "width": 1,
+      "radius": 2
+    },
+    "link": {},
+    "button": {
+      "hover": {
+        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
+      }
+    },
+    "input": {},
+    "body": {
+      "margin": 0
+    },
+    "breakpoints": {
+      "xs": "@media screen and (max-width:40em)",
+      "sm": "@media screen and (min-width:40em)",
+      "md": "@media screen and (min-width:52em)",
+      "lg": "@media screen and (min-width:64em)"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://bitwages.now.sh/",
+          "text": "Home"
+        },
+        {
+          "href": "https://github.com/lucianopf/bitwages",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/bitwages",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "bitwages",
+      "subhead": "Project to calculate the conversion rate with or without fees receiving money from USD/BTC - Coinbase  ",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "bitwages: Project to calculate the conversion rate with or without fees receiving money from USD/BTC - Coinbase  ",
+          "url": "https://bitwages.now.sh/"
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "lucianopf",
+          "repo": "bitwages"
+        }
+      ],
+      "text": "v1.0.0"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n\n<p><a href=\"https://bitcoin-exchange-calculator.now.sh/\">Check it out!</a></p>\n<h2>Installation</h2>\n<ul>\n<li>Clone repository</li>\n<li>Install npm dependencies</li>\n<li><code>npm start</code></li>\n</ul>\n<h2>Deploy</h2>\n<p>This project contains CircleCI hooks at the master branch and it will deploy automatically when the code is pushed to Master.</p>\n<ul>\n<li>Change package.json at the <code>now.alias</code> path to match with your desired alias.</li>\n<li><code>npm run manual-deploy</code>.</li>\n</ul>\n<h2>Contribute</h2>\n<p>I really appreciate help from anyone!! =D</p>\n<p>Create your PR and let&apos;s make it a great tool for helping people receive wages from abroad!</p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/lucianopf/bitwages",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/lucianopf",
+          "text": "lucianopf"
+        }
+      ]
+    }
+  ]
+}
