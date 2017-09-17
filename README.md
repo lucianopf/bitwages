@@ -17,6 +17,6 @@ This project contains CircleCI hooks at the master branch and it will deploy aut
 
 ## Contribute
 
-I really appreciate help form anyone!! =D
+I really appreciate help from anyone!! =D
 
-Create your PR and let's make it the perfect tool for recieving wages from abroad!
+Create your PR and let's make it a great tool for helping people receive wages from abroad!
