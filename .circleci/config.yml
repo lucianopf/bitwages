@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: .
+    docker:
+      - image: circleci/node:7.1
+    steps:
+      - deploy:
+          name: Deploys
+          command: |
+            npm install && npm run deploy
+           
