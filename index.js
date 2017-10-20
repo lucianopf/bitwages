@@ -1,8 +1,10 @@
 const retrieveBTCSummary = require('./lib/fetchData')
+const cache = new require('./lib/cache.js')({
+  fn: retrieveBTCSummary,
+  minutes: 1,
+  log: 'Index'
+})
 
 module.exports = (req, res) => {
-  return retrieveBTCSummary()
-    .catch(err => {
-      console.log(err.response.statusMessage)
-    })
+  return cache.resolve()
 }
