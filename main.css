@@ -4,7 +4,8 @@
 
 .Awesome {
     background-image: radial-gradient(circle, #3241a6 0, #202a6b 120%) !important;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .divider {
@@ -20,4 +21,8 @@
 
 .card h4 {
     margin-bottom: 0;
+}
+
+.results > div {
+  margin-bottom: 20px;
 }
