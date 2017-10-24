@@ -17,6 +17,10 @@
     "alias": "bitwages",
     "type": "static"
   },
+  "rules": [
+    { "pathname": "/api/**", "methods": ["GET"], "dest": "api-bitwages-now.sh" },
+    { "dest": "bitwages.now.sh" }
+  ],
   "devDependencies": {
     "now": "^8.3.4"
   }
