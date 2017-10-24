@@ -1,28 +1,26 @@
 {
   "name": "bitwages",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Show bitcoin prices",
+  "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/xvfb-maybe ./node_modules/.bin/micro",
-    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
-    "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
+    "deploy:surge": "surge .",
+    "automatic-deploy": "./node_modules/.bin/now rm bitwages-ui -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash.get": "^4.4.2",
-    "micro": "^9.0.0",
-    "nightmare": "^2.10.0",
-    "request": "^2.81.0",
-    "request-promise-cache": "^1.0.6",
-    "xvfb-maybe": "^0.2.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romulo1984/bitwages.git"
   },
   "now": {
-    "alias": "bitwages",
-    "type": "docker"
+    "alias": "bitwages-ui"
   },
-  "devDependencies": {
-    "now": "^8.3.4"
-  }
+  "keywords": [
+    "bitwages"
+  ],
+  "author": "Rômulo Guimarães",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romulo1984/bitwages/issues"
+  },
+  "homepage": "https://github.com/romulo1984/bitwages#readme"
 }
