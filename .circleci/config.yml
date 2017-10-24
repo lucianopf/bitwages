@@ -6,7 +6,7 @@ jobs:
     branches:
         only:
             - master
-            - develop
+            - gh-pages
     steps:
       - checkout
       - restore_cache:
