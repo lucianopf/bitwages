@@ -1,12 +1,12 @@
 {
-  "name": "bitwages",
+  "name": "ui-bitwages",
   "version": "1.0.0",
   "description": "Show bitcoin prices",
   "main": "index.js",
   "scripts": {
     "start": "serve .",
-    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias -r rules.json",
-    "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken} -r rules.json"
+    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y || true && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias && ./node_modules/.bin/now alias bitwages.now.sh -r rules.json",
+    "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} || true  && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken} && ./node_modules/.bin/now alias bitwages.now.sh -r rules.json -t ${zeitToken}"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "serve": "latest"
   },
   "now": {
-    "alias": "bitwages",
+    "alias": "ui-bitwages",
     "type": "static"
   },
   "devDependencies": {

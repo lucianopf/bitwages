@@ -1,5 +1,5 @@
 function PricesSummary() {
-  axios.get('https://bitwages.now.sh/')
+  axios.get('https://bitwages.now.sh/api')
     .then(function(response) {
       var content = response.data.PricesSummary.map(function(item) {
         return template(item);
