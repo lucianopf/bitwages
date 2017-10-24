@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:4.8.2'
+    branches:
+        only:
+            - master
+            - develop
+    steps:
+      - checkout
+      - restore_cache:
+          key: 'dependency-cache-{{ checksum "package.json" }}'
+      - run:
+          name: install firebase
+          command: npm install
+      - save_cache:
+          key: 'dependency-cache-{{ checksum "./package.json" }}'
+          paths:
+            - ./node_modules
+      - deploy:
+          name: Deploys
+          command: |
+            npm run automatic-deploy
