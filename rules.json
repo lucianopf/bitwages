@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "pathname": "/api**", "methods": ["GET"], "dest": "api-bitwages-now.sh" },
+    { "dest": "bitwages.now.sh" }
+  ]
+}
