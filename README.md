@@ -1,7 +1,7 @@
 # Bitwages
 Project to calculate the conversion rate with or without fees receiving money from USD/BTC - Coinbase 
 
-[Check it out!](https://bitcoin-exchange-calculator.now.sh/)
+[Check it out!](https://bitwages.now.sh/)
 
 ## Installation
 - Clone repository
