@@ -1,11 +1,11 @@
 {
-  "name": "bitwages",
+  "name": "api-bitwages",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/xvfb-maybe ./node_modules/.bin/micro",
-    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
+    "manual-deploy": "./node_modules/.bin/now rm alias.bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
     "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
   "author": "",
@@ -19,7 +19,7 @@
     "xvfb-maybe": "^0.2.1"
   },
   "now": {
-    "alias": "bitwages",
+    "alias": "api-bitwages",
     "type": "docker"
   },
   "devDependencies": {

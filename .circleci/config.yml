@@ -21,6 +21,4 @@ jobs:
       - deploy:
           name: Deploys
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm run automatic-deploy
-            fi
+            npm run automatic-deploy
