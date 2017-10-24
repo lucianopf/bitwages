@@ -2,25 +2,22 @@
   "name": "bitwages",
   "version": "1.0.0",
   "description": "Show bitcoin prices",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "deploy:surge": "surge .",
-    "automatic-deploy": "./node_modules/.bin/now rm bitwages-ui -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
+    "start": "serve .",
+    "manual-deploy": "./node_modules/.bin/now rm bitwages -s -y && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
+    "automatic-deploy": "./node_modules/.bin/now rm bitwages -s -y -t ${zeitToken} && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/romulo1984/bitwages.git"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "latest"
   },
   "now": {
-    "alias": "bitwages-ui"
+    "alias": "bitwages",
+    "type": "static"
   },
-  "keywords": [
-    "bitwages"
-  ],
-  "author": "Rômulo Guimarães",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/romulo1984/bitwages/issues"
-  },
-  "homepage": "https://github.com/romulo1984/bitwages#readme"
+  "devDependencies": {
+    "now": "^8.3.4"
+  }
 }
