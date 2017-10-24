@@ -6,5 +6,6 @@ const cache = new require('./lib/cache.js')({
 })
 
 module.exports = (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   return cache.resolve()
 }
