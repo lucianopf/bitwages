@@ -1,0 +1,23 @@
+* {
+    color: #fff;
+}
+
+.Awesome {
+    background-image: radial-gradient(circle, #3241a6 0, #202a6b 120%) !important;
+    height: 100vh;
+}
+
+.divider {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card {
+    background: transparent;
+    border: 1px solid #ff625f;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    margin-bottom: 0;
+}
