@@ -10,8 +10,22 @@ function retrieveData() {
       renderUSDBRL(data)
       renderUSDBRLActive(data)
       renderUSDBRLPassive(data)
+      return data
+    })
+    .then(function(data) {
+      renderUSBBRL(data)
+      renderXBTUSD(data)
     })
     .catch(console.log)
+}
+
+function renderUSBBRL (data) {
+  console.log(data.sourceValues.USD)
+  $('#source-usdbrl').html(data.sourceValues.USD)
+}
+
+function renderXBTUSD (data) {
+  $('#source-xbtusd').html(data.sourceValues.BITWAGE_XBTUSD)
 }
 
 function renderPricesSummary(data) {
