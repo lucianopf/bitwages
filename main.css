@@ -30,3 +30,31 @@
 ul {
   padding-left: 20px;
 }
+
+.template {
+  display: none;
+}
+
+.fa-info-circle {
+  margin: 0.5rem;
+}
+
+.tippy-tooltip.bitwages-theme {
+  background-color: #0e1230;
+  border: 1px solid #ff625f;
+  text-align: left;
+  max-width: 350px;
+  padding: 15px 25px;
+}
+
+.tippy-tooltip.bitwages-theme .tippy-tooltip-content {
+  color: white;
+}
+
+.tippy-popper[x-placement=top] .tippy-tooltip.bitwages-theme [x-arrow] {
+  border-top: 7px solid #ff625f;
+}
+
+.tippy-popper[x-placement=bottom] .tippy-tooltip.bitwages-theme [x-arrow] {
+  border-bottom: 7px solid #ff625f; 
+}

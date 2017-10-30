@@ -22,6 +22,7 @@ function retrieveData() {
 function renderUSBBRL (data) {
   console.log(data.sourceValues.USD)
   $('#source-usdbrl').html(data.sourceValues.USD)
+  $('#source-usdbrl-tip').html(data.sourceValues.USD)
 }
 
 function renderXBTUSD (data) {
@@ -58,3 +59,38 @@ function template(item, key) {
 
 retrieveData()
 setInterval(retrieveData, 60000)
+
+$(document).ready(function(){
+  tippy('#prices-tip', {
+    html: document.querySelector('#price-tip-template'),
+    arrow: true,
+    animation: 'fade',
+    size: 'regular',
+    theme: 'bitwages',
+    trigger: 'mouseenter focus click',
+  })
+  tippy('#usdbrl-tip', {
+    html: document.querySelector('#usdbrl-tip-template'),
+    arrow: true,
+    animation: 'fade',
+    size: 'regular',
+    theme: 'bitwages',
+    trigger: 'mouseenter focus click',
+  })
+  tippy('#usdbrl-active-tip', {
+    html: document.querySelector('#usdbrl-active-tip-template'),
+    arrow: true,
+    animation: 'fade',
+    size: 'regular',
+    theme: 'bitwages',
+    trigger: 'mouseenter focus click',
+  })
+  tippy('#usdbrl-passive-tip', {
+    html: document.querySelector('#usdbrl-passive-tip-template'),
+    arrow: true,
+    animation: 'fade',
+    size: 'regular',
+    theme: 'bitwages',
+    trigger: 'mouseenter focus click',
+  })
+})
