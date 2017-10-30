@@ -68,3 +68,7 @@ ul {
 .tippy-popper[x-placement=bottom] .tippy-tooltip.bitwages-theme [x-arrow] {
   border-bottom: 7px solid #ff625f; 
 }
+
+a:hover > span{
+  color: white;
+}
