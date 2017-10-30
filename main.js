@@ -30,19 +30,19 @@ function renderXBTUSD (data) {
 }
 
 function renderPricesSummary(data) {
-  $('.results > .prices-summary > .exchanges').html(data.PricesSummary.map(template))
+  $('.results > .prices-summary > .exchanges > .row').html(data.PricesSummary.map(template))
 }
 
 function renderUSDBRL(data) {
-  $('.results > .usdbrl > .exchanges').html(data.USDBRL.map(template))
+  $('.results > .usdbrl > .exchanges > .row').html(data.USDBRL.map(template))
 }
 
 function renderUSDBRLActive(data) {
-  $('.results > .usdbrl-active > .exchanges').html(data.USDBRLACTIVEACTION.map(template))
+  $('.results > .usdbrl-active > .exchanges > .row').html(data.USDBRLACTIVEACTION.map(template))
 }
 
 function renderUSDBRLPassive(data) {
-  $('.results > .usdbrl-passive > .exchanges').html(data.USDBRLPASSIVEACTION.map(template))
+  $('.results > .usdbrl-passive > .exchanges > .row').html(data.USDBRLPASSIVEACTION.map(template))
 }
 
 function template(item, key) {
