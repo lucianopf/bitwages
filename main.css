@@ -8,6 +8,16 @@
     height: 100%;
 }
 
+a {
+  color: #ff625f;
+  font-weight: bold;
+}
+
+a:hover, a:hover span {
+  color: rgba(255, 98, 95, 0.53);
+  text-decoration: none;
+}
+
 .divider {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
