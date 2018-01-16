@@ -9,7 +9,6 @@ const indexCache = new require('./lib/cache.js')({
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   let [path, params] = retrieveUrl(req.url)
-  console.log(path, params)
   switch(path) {
     case '/history': 
       return require('./lib/db').getApiResponses(params)
