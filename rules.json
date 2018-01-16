@@ -1,6 +1,6 @@
 {
   "rules": [
-    { "pathname": "/api", "method": "GET", "dest": "//api-bitwages.now.sh/" },
+    { "pathname": "/api***", "method": "GET", "dest": "//api-bitwages.now.sh/" },
     { "dest": "ui-bitwages.now.sh" }
   ]
 }
