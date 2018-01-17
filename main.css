@@ -72,3 +72,35 @@ ul {
 a:hover > span{
   color: white;
 }
+
+.section-graph {
+  position: relative;
+  max-height: 565px;
+  border: 1px solid #ff625f; 
+  border-radius: 2.5px;
+  padding: 30px;
+  /* background-color: white; */
+}
+
+.btn-outline-primary {
+  border: 1px solid #ff625f; 
+  color: white;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff625f;
+}
+
+.btn-outline-primary:disabled {
+  background-color: #ff625f;
+  color: white;
+}
+
+.btn-disabled {
+  background-color: #ff625f;
+  color: white;
+}
+
+.chart-buttons > button {
+  margin: 10px 5px 10px 0;
+}

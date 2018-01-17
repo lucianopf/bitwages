@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/tippy.js/dist/tippy.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header>        
         <div class="container results">
             <div class="row">
                 <div class="col-12">
@@ -75,21 +75,37 @@
                     </div>
                 </div>
             </div>
-            <div class="row prices-summary">
+            
+            <div class="row prices-chart">
                 <div class="col-12">
                     <h5>
-                        <a href=".summary" data-toggle="collapse">
+                        <a href=".chart" data-toggle="collapse">
                             <i class="fa fw fa-angle-down"></i>
-                            <span>Prices</span> <i>summary</i>
+                            <span>Price</span> <i>charts</i>
                         </a>
                         <i class="fa fa-info-circle" id="prices-tip"></i>
                     </h5>
                 </div>
-                <div class="col-12 exchanges collapse show summary">
-                    <div class="row">
-                        <div class="col-12">
-                            carregando exchanges...
-                        </div>
+                <div class="col-12 exchanges collapse show chart">
+                    <div class="chart-buttons">
+                      <button type="button" class="btn btn-outline-primary chart-button" data-type="USDBRL" disabled>USDBRL</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-type="USDBRLACTIVEACTION">USDBRL active</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-type="USDBRLPASSIVEACTION">USDBRL passive</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-type="PricesSummary">Prices summary</button>
+                      <button type="button" class="btn btn-outline-primary chart-aggregate pull-right">Aggregate Data</button>
+                      
+                    </div>
+                    <div class="section-graph">
+                      <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="chart-buttons">
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="2" disabled>2 hours</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="4">4 hours</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="6">6 hours</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="12">12 hours</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="24">1 day</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="48">2 day</button>
+                      <button type="button" class="btn btn-outline-primary chart-button" data-hours="72">3 day</button>
                     </div>
                 </div>
             </div>
@@ -147,6 +163,24 @@
                     </div>
                 </div>
             </div>
+            <div class="row prices-summary">
+                <div class="col-12">
+                    <h5>
+                        <a href=".summary" data-toggle="collapse">
+                            <i class="fa fw fa-angle-down"></i>
+                            <span>Prices</span> <i>summary</i>
+                        </a>
+                        <i class="fa fa-info-circle" id="prices-tip"></i>
+                    </h5>
+                </div>
+                <div class="col-12 exchanges collapse summary">
+                    <div class="row">
+                        <div class="col-12">
+                            carregando exchanges...
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer class="container">
@@ -196,6 +230,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     <script src="https://unpkg.com/tippy.js/dist/tippy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 </body>
-
 </html>
