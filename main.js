@@ -2,6 +2,7 @@ var activeChart
 var defaultHours = 2
 var defaultType = 'USDBRL'
 var defaultAggregate = false
+var localStorageKeyName = 'bitwages'
 var maximumAggregate = 30
 var fetchedData = {
   hours: 0,
@@ -46,7 +47,7 @@ function aggregateData(data) {
         .splice(0, dataLength/maximumAggregate)
         .filter(function(e) { return e })
       var timestamp = pushable
-        .map(function (e) { console.log(e); return new Date(e.x).getTime() })
+        .map(function (e) { return new Date(e.x).getTime() })
       var value = pushable
         .map(function (e) { return parseFloat(e.y) })
         .reduce(function(a, b) { return a + b }, 0)
@@ -59,6 +60,25 @@ function aggregateData(data) {
   })
   return data
 }
+
+function writeLS(data) {
+  return window.localStorage.setItem(localStorageKeyName, JSON.stringify(data))
+}
+
+function readLS() {
+  return JSON.parse(window.localStorage.getItem(localStorageKeyName)) || {}
+}
+
+function toggleLegends(data) {
+  var title = data.text
+  var datasetIndex = data.datasetIndex
+  var datasets = activeChart.config.data.datasets
+  datasets[datasetIndex].hidden = !datasets[datasetIndex].hidden
+  activeChart.update()
+  let ls = readLS()
+  ls[title] = !ls[title]
+  writeLS(ls)
+} 
 
 function retrieveHistoricalData(x, type, aggregate) {
   var ONE_HOUR = 60 * 60 * 1000
@@ -93,11 +113,9 @@ function retrieveHistoricalData(x, type, aggregate) {
         }, {})
     })
     .then(function(data) {
-      console.log('Before Aggregate ->', data)
       if (aggregate) {
         data = aggregateData(data)
       }
-      console.log('After Aggregate ->', data)
       var colors = {
         'FlowBTC': '#F7D600',
         'BitcoinToYou': '#E63946',
@@ -114,12 +132,13 @@ function retrieveHistoricalData(x, type, aggregate) {
       Chart.defaults.global.defaultFontColor = '#FFF'
       var ctx = document.getElementById("myChart").getContext('2d')
       activeChart && activeChart.destroy && activeChart.destroy()
-      activeChart = new Chart(ctx, {
+      return activeChart = new Chart(ctx, {
         type: 'line',
         data: {
           datasets: Object.keys(data).map(dataKey => {
             return {
               label: dataKey,
+              display: false,
               backgroundColor: colors[dataKey],
               borderColor: colors[dataKey],
               borderWidth: 1,
@@ -156,6 +175,9 @@ function retrieveHistoricalData(x, type, aggregate) {
           },
           tooltips: {
             mode: 'index'
+          },
+          legend: {
+              onClick: function(e, legendItem) { toggleLegends(legendItem) }
           }
         }
       })
@@ -165,11 +187,24 @@ function retrieveHistoricalData(x, type, aggregate) {
         easing: 'linear'
       })
     })
+    .then(function(chart) {
+      var ls = readLS()
+      var datasets = activeChart.config.data.datasets
+      Object.keys(ls).forEach(function(flag) {
+        if (ls[flag]) {
+          datasets.forEach(function(d) {
+            if (d.label === flag) {
+              d.hidden = !d.hidden 
+            }
+          })
+        }
+      })
+      activeChart.update()
+    })
     .catch(console.log)
 }
 
 function renderUSBBRL (data) {
-  console.log(data.sourceValues.USD)
   $('#source-usdbrl').html(data.sourceValues.USD)
   $('#source-usdbrl-tip').html(data.sourceValues.USD)
 }
