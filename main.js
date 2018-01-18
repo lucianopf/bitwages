@@ -52,7 +52,7 @@ function aggregateData(data) {
         .map(function (e) { return parseFloat(e.y) })
         .reduce(function(a, b) { return a + b }, 0)
       resultArray.push({
-        x: timestamp[Math.floor(timestamp.length/2)],
+        x: new Date(timestamp[Math.floor(timestamp.length/2)]),
         y: value/pushable.length
       })
     }
@@ -174,7 +174,10 @@ function retrieveHistoricalData(x, type, aggregate) {
             }]
           },
           tooltips: {
-            mode: 'index'
+            mode: 'index',
+            label: function(tooltipItem, data	) {
+              console.log(tooltipItem, data)
+            }
           },
           legend: {
               onClick: function(e, legendItem) { toggleLegends(legendItem) }
