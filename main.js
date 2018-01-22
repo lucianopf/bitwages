@@ -10,14 +10,15 @@ var fetchedData = {
   result: []
 }
 
+
 function retrieveData() {
   return axios.get('https://bitwages.now.sh/api')
     .then(function(response) {
       data = response.data
       return data
     })
+    .then(filterExchanges)
     .then(function(data) {
-      console.warn('content loaded...');
       renderPricesSummary(data)
       renderUSDBRL(data)
       renderUSDBRLActive(data)
@@ -30,6 +31,8 @@ function retrieveData() {
     })
     .catch(console.log)
 }
+
+
 
 function aggregateData(data) {
   var dataLength;
@@ -69,15 +72,26 @@ function readLS() {
   return JSON.parse(window.localStorage.getItem(localStorageKeyName)) || {}
 }
 
+function filterExchanges(data) {
+  var filters = readLS()
+  return Object.keys(data).reduce(function(result, actualKey) {
+    result[actualKey] = [].concat(data[actualKey]).filter(function(exchange) {
+      return !filters[exchange.id]
+    })
+    return result
+  }, {})
+}
+
 function toggleLegends(data) {
   var title = data.text
   var datasetIndex = data.datasetIndex
   var datasets = activeChart.config.data.datasets
   datasets[datasetIndex].hidden = !datasets[datasetIndex].hidden
   activeChart.update()
-  let ls = readLS()
+  var ls = readLS()
   ls[title] = !ls[title]
   writeLS(ls)
+  retrieveData()
 } 
 
 function retrieveHistoricalData(x, type, aggregate) {
