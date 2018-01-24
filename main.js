@@ -19,6 +19,7 @@ function retrieveData() {
     })
     .then(filterExchanges)
     .then(function(data) {
+      console.log(data)
       renderPricesSummary(data)
       renderUSDBRL(data)
       renderUSDBRLActive(data)
@@ -222,12 +223,12 @@ function retrieveHistoricalData(x, type, aggregate) {
 }
 
 function renderUSBBRL (data) {
-  $('#source-usdbrl').html(data.sourceValues.USD)
-  $('#source-usdbrl-tip').html(data.sourceValues.USD)
+  $('#source-usdbrl').html(data.sourceValues[0].USD)
+  $('#source-usdbrl-tip').html(data.sourceValues[0].USD)
 }
 
 function renderXBTUSD (data) {
-  $('#source-xbtusd').html(data.sourceValues.BITWAGE_XBTUSD)
+  $('#source-xbtusd').html(data.sourceValues[0].BITWAGE_XBTUSD)
 }
 
 function renderPricesSummary(data) {
