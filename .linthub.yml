@@ -1,2 +1,2 @@
 js: 
-  lint: eslint
+  lint: true
