@@ -1,32 +1,9 @@
 {
-  "name": "api-bitwages",
+  "name": "db-bitwages",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "./node_modules/.bin/xvfb-maybe ./node_modules/.bin/micro",
-    "manual-deploy": "./node_modules/.bin/now rm api-bitwages -s -y || true && ./node_modules/.bin/now --public && ./node_modules/.bin/now alias",
-    "automatic-deploy": "./node_modules/.bin/now rm api-bitwages -s -y -t ${zeitToken} || true && ./node_modules/.bin/now --public -t ${zeitToken} && ./node_modules/.bin/now alias -t ${zeitToken}"
-  },
+  "description": "database for the bitwages project",
+  "scripts": {},
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dynamoose": "^0.8.6",
-    "lodash.get": "^4.4.2",
-    "micro": "^9.0.0",
-    "nightmare": "^2.10.0",
-    "request": "^2.81.0",
-    "request-promise-cache": "^1.0.6",
-    "xvfb-maybe": "^0.2.1"
-  },
-  "now": {
-    "alias": "api-bitwages",
-    "type": "docker",
-    "env": {
-      "dynamoURL": "@dynamourl"
-    }
-  },
-  "devDependencies": {
-    "now": "^8.3.4"
-  }
+  "dependencies": {}
 }

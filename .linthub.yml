@@ -1,6 +1,0 @@
-platform: osx
-
-analyzers:
-  - eshint: true
-    params: test2
-  - jshint: true
