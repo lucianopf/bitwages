@@ -15,6 +15,7 @@
     "lodash.get": "^4.4.2",
     "micro": "^9.0.0",
     "nightmare": "^2.10.0",
+    "prettier": "^1.14.3",
     "request": "^2.81.0",
     "request-promise-cache": "^1.0.6",
     "xvfb-maybe": "^0.2.1"
